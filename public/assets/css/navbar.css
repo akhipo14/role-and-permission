@@ -1,0 +1,132 @@
+.navbar{
+    background-color:rgb(68, 175, 110);
+    padding: 0px 40px;
+}
+
+
+
+.form-field {
+    display: block;
+    width: 100%;
+    padding: 6px 16px;
+    line-height: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    border-radius: 30px;
+    -webkit-appearance: none;
+    color:  #808797;
+    border: 1px solid #CDD9ED;
+    background: #fff;   
+    transition: border .3s ease;
+    &::placeholder {
+        color:  #b4bac5;
+    }
+    &:focus {
+        outline: none;
+        border-color:  #275EFE;
+    }
+}
+
+.form-group {
+    position: relative;
+    display: flex;
+    width: 400px;
+    margin-left: 30px;
+    & > span,
+    .form-field {
+        white-space: nowrap;
+        display: block;
+        &:not(:first-child):not(:last-child) {
+            border-radius: 0;
+        }
+        &:first-child {
+            border-radius: 8px 0 0 8px;
+        }
+        &:last-child {
+            border-radius: 0 8px 8px 0;
+        }
+        &:not(:first-child) {
+            margin-left: -1px;
+        }
+    }
+    .form-field {
+        position: relative;
+        z-index: 1;
+        flex: 1 1 auto;
+        width: 1%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    & > span {
+        text-align: center;
+        padding: 8px 12px;
+        font-size: 14px;
+        line-height: 25px;
+        color: white;
+        background: rgb(68, 175, 110);
+        border: 1px solid#CDD9ED;
+        transition: background .3s ease, border .3s ease, color .3s ease;
+
+    }
+    &:focus-within {
+        & > span {
+            color: #fff;
+            background: rgb(40, 150, 84);
+            border: 1px solid#CDD9ED;
+
+        }
+    }
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+}
+
+
+#toggle-btn{
+    cursor: pointer;
+    border:none;
+    padding: 10px 16px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(68, 175, 110);
+    transition: .3s;
+    border-radius: 8px; 
+    border: 1px solid transparent;
+}
+   
+   #toggle-btn:hover{
+    border: 1px solid white;
+
+   }
+
+   .user{
+    cursor: pointer;
+    border:none;
+    padding: 10px 16px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(68, 175, 110);
+    transition: .3s;
+    border-radius: 8px; 
+   }
+   
+   .user:hover{
+    background-color: rgb(40, 150, 84);
+    color: rgb(255, 255, 255);
+   }
+
+   .burger{
+    color: rgb(255, 255, 255);
+    background-color: rgb(68, 175, 110);
+   }
+
+   .burger:hover{
+    background-color: rgb(40, 150, 84) !important;
+    color: rgb(255, 255, 255);
+   }
+
+   .dropdown-menu a.dropdown-item:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(68, 175, 110);
+
+   }

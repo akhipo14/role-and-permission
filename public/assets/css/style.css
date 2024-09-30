@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+label{
+    color: rgb(91, 91, 91);
+
+}
+
+.custom-small{
+    color: rgb(91, 91, 91);
+    letter-spacing: .5px !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.form-control:focus{
+    border: 1px solid rgb(68, 175, 110);
+}
+
+p{
+    color: rgb(91, 91, 91);
+}
+h2{
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: rgb(91, 91, 91);
+    letter-spacing: .5px;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: rgb(91, 91, 91);
+    letter-spacing: .3px;
+}
+
+h3{
+    font-weight: 600;
+    color: rgb(91, 91, 91);
+    letter-spacing: .8px;
+}
+
+h5{
+    color: rgb(91, 91, 91);
+    letter-spacing: .8px;
+}
+
+.w-80{
+    width: 80% !important;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper{
+    display: flex;
+}
+
+.main {
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    opacity: 1;
+    backdrop-filter: blur(5px); /* Ubah nilai blur sesuai keinginan Anda */
+    background-color: rgb(242, 249, 245); /* Atur transparansi latar belakang */
+    background-size: 21px 21px;
+}
+
+
+
+.content2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 270px;
+    background-color: rgba(68, 175, 110); /* Atur warna latar belakang dan transparansi */
+    z-index: -1; /* Pastikan .content2 berada di belakang .content */
+}
+.tinggi{
+    height: 100vh;
+}
+/* title */
+
+.title-content{
+    padding-top: 20px ;
+    padding-bottom: 20px ;
+    align-items: center;
+    display: flex;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.title-content h1{
+    margin: auto 0;
+    color: rgb(91, 91, 91);
+}
+
+.body-content{
+    padding: 0px 40px;
+    margin-bottom: 50px;
+    
+}
+
+.card{
+    background-color: white;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.13);
+    padding: 8px 12px;   
+}
+
+.card-border{
+    border : 1px solid rgb(222, 226, 230);
+    transition: .5s;
+}
+
+.card-border:hover{
+    border : 1px solid rgb(68, 175, 110);
+}
+.card-border-2{
+    border : 1px solid transparent;
+    transition: .5s;
+    border-radius: 0px 6px 6px 0px;
+}
+
+.card-border-2:hover{
+    border : 1px solid rgb(68, 175, 110);
+    border-radius: 6px 6px 6px 6px;
+
+}
+
+/* .modal-header{
+    border-bottom: none !important;
+}
+
+.modal-footer{
+    border-top: none !important;
+} */
+
+.border-start{
+    border-left: 1px solid rgb(68, 175, 110) !important;
+}
+
+
+.card-title{
+    color: rgb(91, 91, 91);
+    letter-spacing: .5px;
+}
+
+.form-control:focus{
+    box-shadow: none !important;
+}
+
+.min-tinggi-card{
+    min-height: 130px;
+    height: 130px;
+}
+
+.min-tinggi-card-2{
+    min-height: 100px;
+    height: 100px;
+}
+
+
+/* text-custom */
+
+.text-primary-2{
+    color: rgb(83, 87, 224);
+}
+
+.text-green-2{
+    color: rgb(68, 175, 110) ;
+}
+
+.text-secondary-2{
+    color: rgb(91, 91, 91);
+}
+
+.text-danger-2{
+    color: rgb(217, 62, 39);
+}
+
+.text-warning-2{
+    color: rgb(229, 167, 14);
+}
+.text-success-2{
+    color: rgb(46, 159, 77) !important;
+}
+
+/* logo */
+
+/* background */
+
+.bg-success-2{
+    background-color: rgb(212, 237, 220) !important;
+    color: rgb(46, 159, 77);
+    border: 1px solid rgb(46, 159, 77);
+    letter-spacing: .5px;
+}
+.bg-warning-2{
+    background-color: rgb(252, 243, 220) !important;
+    color: rgb(211, 124, 11);
+    border: 1px solid rgb(229, 167, 14);
+    letter-spacing: .5px;
+}
+.bg-secondary-2{
+    background-color: rgb(224, 224, 224) !important;
+    color: rgb(77, 77, 77);
+    letter-spacing: .5px;
+}
+
+.bg-danger-2{
+    background-color: rgb(243, 220, 216) !important;
+    color: rgb(217, 62, 39);
+    border: 1px solid rgb(217, 62, 39);
+    letter-spacing: .5px;
+}
+.bg-primary-2{
+    /* background-color: rgb(203, 205, 246) !important; */
+    color: rgb(83, 88, 224);
+    letter-spacing: .5px;
+}
+
+.border-primary{
+    border-color: rgb(203, 205, 246) !important;
+    letter-spacing: .5px;
+}
+
+.img-preview{
+    width:100%;
+    max-height: 300px;
+    object-fit: cover;
+
+}
