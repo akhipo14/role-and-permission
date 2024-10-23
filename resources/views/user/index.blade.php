@@ -18,7 +18,7 @@
         @endif
         <div class="card">
             <h1>User</h1>
-            <div class="">
+            {{-- <div class="">
                 @can('add user')
                     <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#tambahpengguna"><i
                             class="fa-solid fa-plus"></i> Add User</button>
@@ -89,7 +89,7 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div> --}}
 
-    </div>
-@endsection
+        </div>
+    @endsection

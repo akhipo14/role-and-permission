@@ -5,6 +5,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\TestController;
+use App\Models\User;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
@@ -19,9 +21,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
+// Route::get('/test', function () {
+//     $user = User::all();
+//     dd($user);
 //     return view('test');
 // });
+
+Route::get('/test',[TestController::class,'test']);
 
 Route::group(['middleware'=>'auth'], function(){
     Route::get('/user',[UserController::class,'index'])->name('user');

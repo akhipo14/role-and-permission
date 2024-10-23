@@ -34,6 +34,7 @@ class RolePermissionSeeder extends Seeder
         Permission::create(['name'=>'delete post']);
         Permission::create(['name'=>'view post']);
         Permission::create(['name'=>'show all post']);
+        Permission::create(['name'=>'permission order']);
 
         Permission::create(['name'=>'update permission to role']);
 

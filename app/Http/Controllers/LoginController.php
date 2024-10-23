@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
@@ -13,33 +15,43 @@ class LoginController extends Controller
 
     public function post(Request $request){
         $request->validate([
-            'email'=>'required|email',
+            'username'=>'required',
             'password'=>'required'
         ]);
 
-        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
-            $user = Auth::user();
-            if($user->hasAnyPermission('add user','view user','update user','delete user')){
-            return redirect()->intended('/user');
-            }
-            else if($user->hasAnyPermission('add role','view role','update role','delete role')){
-                return redirect()->intended('/role');
-            }
-            else if($user->hasAnyPermission('add permission','view permission','update permission','delete permission')){
-                return redirect()->intended('/permission');
-            }
-            else if($user->hasAnyPermission('add post','view post','update post','delete post')){
-                return redirect()->intended('/post');
-            }
-            else{
-                return redirect()->intended('/');
-            }
-            
-            
-        }
+        $username = $request->username;
+        $password = $request->password;
+        $valid_user = User::where('username',$username)
+        ->first();
+        // $valid_user = DB::table('tbluser')->where('username',$username)
+        // ->where('password',$password)->first();
 
+        if(!$valid_user){
+            return back()->withErrors([
+                'error'=> 'username belum terdaftar'
+            ]);
+        }
+        // $password_user = $valid_user->password;
+        // if($request->password === $password_user){
+        //     dd('password sama');
+        // }
+        // else{
+        //     dd('password tdk sama');
+        // }
+        $valid_ic_user = DB::table('ic_user')->where('idUser',$valid_user->idUser)->first();
+        if($valid_ic_user  && $valid_user->password === $request->password){
+            // if(Auth::attempt(['username' =>$request->username,'password'=>$request->password])){
+            //     $user = Auth::user();
+            //     $token = $valid_ic_user->createToken('Auth')->plainTextToken;
+            //     return redirect()->intended('/user',compact('valid_ic_user','token'));
+            // }
+
+            Auth::login($valid_user);
+            return redirect()->intended('/user');
+
+        }
         return back()->withErrors([
-            'email'=> 'email atau password salah'
+            'username'=> 'email atau password salah'
         ]);
     }
 
