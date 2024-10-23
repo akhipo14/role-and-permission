@@ -15,16 +15,13 @@ class TestController extends Controller
         $user_username = $users_validate->username;
         $test ='$2a$10$XR/S5MrG6iG4Xw6yoHxgC.7/RYN.vo2xu0/ai7kAYxFGLMJXLSotq';
 
-        // $menus = $this->menu();
-
-        // if($users_validate = $test){
-        //     dd('password sama');
+        $menu_header = Menu::where('jenisMenu','header')->where('isActive',1)->get();
+        $menu_child = Menu::where('jenisMenu','child')->where('isActive',1)->get();
+        // $menus[] = '';
+        // foreach($menu_header as $menu){
+        //     $menus[] = $menu->childMenu;
         // }
-        // dd($users_validate);
-
-        $menu_header = Menu::where('jenisMenu','header')->get();
-        $menu_child = Menu::where('jenisMenu','child')->get();
-        
+        // dd($menus);
         return view('/test',compact('menu_header','menu_child'));
     }
 

@@ -18,14 +18,14 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $table = 'tbluser';
+    protected $table = 'ic_user';
     // protected $primaryKey = 'id';
-    protected $fillable = [
-        'idUser',
-        'idLevel',
-        'isActive',
-    ];
-
+    // protected $fillable = [
+    //     'idUser',
+    //     'idLevel',
+    //     'isActive',
+    // ];
+    protected $guarded=[];
 
     /**
      * The attributes that should be hidden for serialization.
